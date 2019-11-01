@@ -4,6 +4,7 @@ const input = document.getElementById('pair-input');
 const deleteButton = document.getElementById('delete');
 const sortByNameButton = document.getElementById('sort-by-name');
 const sortByValueButton = document.getElementById('sort-by-value');
+const showXMLButton = document.getElementById('show-xml');
 
 
 const isValid = function(string){
@@ -50,6 +51,25 @@ const sortByName = function() {
   renderPairs(pairsContainer, pairs);
 };
 
+const showXML = function () {
+  let root = document.createElement('root');
+  pairs.forEach( pair => {
+    const item = document.createElement('item');
+
+    const name = document.createElement('name');
+    name.textContent = pair.name;
+    item.append(name);
+
+    const value = document.createElement('value');
+    value.textContent = pair.value;
+    item.append(value);
+
+    root.append(item);
+  });
+  pairsContainer.innerHTML = '';
+  pairsContainer.textContent = root.outerHTML;
+};
+
 const renderPairs = function(container, content) {
   container.innerHTML = "";
   content.forEach(item => {
@@ -75,3 +95,4 @@ form.addEventListener('submit', (event) => {
 deleteButton.addEventListener('click', deleteSelectedItems);
 sortByNameButton.addEventListener('click', sortByName);
 sortByValueButton.addEventListener('click', sortByValue);
+showXMLButton.addEventListener('click', showXML);
