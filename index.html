@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Pepperi</title>
+</head>
+<body>
+<div class="container">
+  <header class="header">Test</header>
+  <main>
+    <form id="add-pair-form">
+      <label for="pair-input">
+        <span class="subheading">Name/Value Pair</span>
+        <input type="text" id="pair-input" placeholder="Name=Value">
+      </label>
+      <button type="submit" id="add-button">Add</button>
+    </form>
+    <span class="subheading">Name/Value Pair List</span>
+    <div class="flex-container">
+      <section id="pairs" class="pairs-container"></section>
+      <section class="buttons">
+        <button type="button" id="sort-by-name">Sort by Name</button>
+        <button type="button" id="sort-by-value">Sort by Value</button>
+        <button type="button" id="delete">Delete</button>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>
